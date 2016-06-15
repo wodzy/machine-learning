@@ -1,0 +1,1 @@
+ID	text	sentiment0	I love this sandwich.	pos1	This is an amazing place!	pos2	I feel very good about these beers.	pos3	This is my best work.	pos4	What an awesome view	pos5	I do not like this restaurant	neg6	I am tired of this stuff.	neg7	I can't deal with this	neg8	He is my sworn enemy!	neg9	this guy is horrible.	neg
