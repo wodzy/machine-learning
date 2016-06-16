@@ -29,9 +29,13 @@ n = 100
 rfc = RandomForestClassifier(n_estimators=int(n), oob_score=True)
 rfc.fit(train_data, train_target)
 
+train.to_csv("result.csv", cols=['ImageId', 'Label'], index=False)
+print("wrote out predictions to results.csv")
+
 for n in range(100, 500, 100):
 	rfc = RandomForestClassifier(n_estimators=int(n), oob_score=True)
 	rfc.fit(train_data, train_target)
 	print("Out-Of-Bag (OOB) Score: %f" % rfc.oob_score_)
 	valid_pred = rfc.predict(validation_data)
 	print("Mean Accuracy score for validation data set = %f" %(rfc.score(validation_data, validation_target)))
+ 

@@ -1,10 +1,3 @@
-""" Writing my first randomforest code.
-Author : AstroDave
-Date : 23rd September 2012
-Revised: 15 April 2014
-please see packages.python.org/milk/randomforests.html for more
-
-""" 
 import pandas as pd
 import numpy as np
 import csv as csv
@@ -41,7 +34,7 @@ train_df = train_df.drop(['Name', 'Sex', 'Ticket', 'Cabin', 'PassengerId'], axis
 
 
 # TEST DATA
-test_df = pd.read_csv('test.csv', header=0)        # Load the test file into a dataframe
+test_df = pd.read_csv('train.csv', header=0)        # Load the test file into a dataframe
 
 # I need to do the same with the test data now, so that the columns are the same as the training data
 # I need to convert all strings to integer classifiers:
@@ -80,9 +73,10 @@ test_df = test_df.drop(['Name', 'Sex', 'Ticket', 'Cabin', 'PassengerId'], axis=1
 train_data = train_df.values
 test_data = test_df.values
 
+# print(test_data)
 
 print 'Training...'
-forest = RandomForestClassifier(n_estimators=100)
+forest = RandomForestClassifier(n_estimators=418)
 forest = forest.fit( train_data[0::,1::], train_data[0::,0] )
 
 print 'Predicting...'
